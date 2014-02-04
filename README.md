@@ -19,14 +19,14 @@ npm install
 
 This will automatically install the following dev dependencies:
 
-* gulp 
-* gulp-util 
-* gulp-rename 
-* gulp-sass 
-* gulp-uglify 
-* gulp-concat 
-* gulp-livereload 
-* tiny-lr
+* [gulp](https://github.com/gulpjs/gulp)
+* [gulp-util](https://github.com/gulpjs/gulp-util) 
+* [gulp-rename](https://github.com/hparra/gulp-rename) 
+* [gulp-sass](https://github.com/dlmanning/gulp-sass) 
+* [gulp-uglify](https://github.com/terinjokes/gulp-uglify) 
+* [gulp-concat](https://github.com/wearefractal/gulp-concat)
+* [gulp-livereload](https://github.com/vohof/gulp-livereload) 
+* [tiny-lr](https://github.com/mklabs/tiny-lr)
 
 
 ### 3. Install one of the [LiveReload browser extensions](http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-).
