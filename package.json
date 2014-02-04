@@ -1,3 +1,22 @@
 {
-  "devDependencies": {}
+"name": "gulp-kickstart",
+  "version": "0.1.0",
+  "description": "gulp, livereload, smacss mini framework",
+  "author": "Francesco Schwarz <@isellsoap>",
+  "keywords": [
+    "gulp",
+    "kickstart",
+    "boilerplate",
+    "livereload"
+  ],  
+  "devDependencies": {
+    "gulp-livereload": "~0.3.2",
+    "gulp-concat": "~2.1.7",
+    "gulp-rename": "~0.2.2",
+    "gulp-util": "~2.2.14",
+    "gulp": "~3.5.1",
+    "tiny-lr": "0.0.5",
+    "gulp-uglify": "~0.2.0",
+    "gulp-sass": "~0.6.0"
+  }
 }
