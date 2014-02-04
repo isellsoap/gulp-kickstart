@@ -1,0 +1,88 @@
+/**
+ * Vendor prefix mixin for less (no joke intended) Sass code.
+ */
+
+@mixin vendor-prefix($property, $value...) {
+  -moz-#{$property}: #{$value};
+  -ms-#{$property}: #{$value};
+  -o-#{$property}: #{$value};
+  -webkit-#{$property}: #{$value};
+  #{$property}: #{$value};
+}
+
+/**
+ * Calculates rem and px units for any given property.
+ * @link: http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
+ * @usage: @include x-rem(font-size, 14px)
+ * @result: font-size: 14px;
+ *          font-size: .875rem;
+ * @usage: @include x-rem(margin, 2rem 10px 5px 1rem)
+ * @result: margin: 32px 10px 5px 16px;
+ *          margin: 2rem .625rem .3125rem 1rem;
+ */
+
+@mixin rem($property, $values) {
+  $px: ();
+  $rem: ();
+
+  @each $value in $values {
+    @if $value == 0 or type-of($value) != "number" {
+      $px: append($px, $value);
+      $rem: append($rem, $value);
+    } @else {
+      $unit: unit($value);
+      $val: parse-int($value);
+
+      @if $unit == "px" {
+        $px: append($px, $value);
+        $rem: append($rem, ($val / $base-font-size + rem));
+      } @else if $unit == "rem" {
+        $px: append($px, ($val * $base-font-size + px));
+        $rem: append($rem, $value);
+      }
+    }
+  }
+
+  #{$property}: $px;
+  /* Add the rem list only if it's different to the px list to avoid
+  redundancy. */
+  @if $px != $rem {
+    #{$property}: $rem;
+  }
+}
+
+/**
+ * Generates media queries based upon a string variable. The variables for the
+ * various grids are located in _variables.scss.
+ * @usage: p {
+ *           @include breakpoint($breakpoint-4-col) {
+ *             background: #f00;
+ *           }
+ *         }
+ * @result: @media only screen and (min-width: 901px) and (max-width: 1199px) {
+ *            p {
+ *              background: #f00;
+ *            }
+ *          }
+ */
+
+@mixin breakpoint($breakpoint) {
+  @media only screen and #{$breakpoint} {
+    @content;
+  }
+}
+
+/**
+ * Generates linear gradients with the vendor specific syntaxes.
+ */
+
+@mixin linear-gradient($direction, $start-color: rgba(255, 255, 255, 0), $end-color: $default-background-color) {
+  /* Opposite direction used for standard W3C linear-gradient syntax (last line). */
+  $opposite: opposite-direction-of($direction);
+
+  background: -moz-linear-gradient(#{$direction}, $start-color 0%, $end-color 100%);
+  background: -ms-linear-gradient(#{$direction}, $start-color 0%, $end-color 100%);
+  background: -o-linear-gradient(#{$direction}, $start-color 0%, $end-color 100%);
+  background: -webkit-linear-gradient(#{$direction}, $start-color 0%, $end-color 100%);
+  background: linear-gradient(to #{$opposite}, $start-color 0%, $end-color 100%);
+}
