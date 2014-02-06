@@ -22,7 +22,7 @@ This will automatically install the following dev dependencies:
 * [gulp](https://github.com/gulpjs/gulp)
 * [gulp-util](https://github.com/gulpjs/gulp-util) 
 * [gulp-rename](https://github.com/hparra/gulp-rename) 
-* [gulp-sass](https://github.com/dlmanning/gulp-sass) 
+* [gulp-ruby-sass](https://github.com/sindresorhus/gulp-ruby-sass) 
 * [gulp-uglify](https://github.com/terinjokes/gulp-uglify) 
 * [gulp-concat](https://github.com/wearefractal/gulp-concat)
 * [gulp-livereload](https://github.com/vohof/gulp-livereload) 
