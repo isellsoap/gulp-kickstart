@@ -18,6 +18,6 @@
     "gulp": "~3.5.1",
     "tiny-lr": "0.0.5",
     "gulp-uglify": "~0.2.0",
-    "gulp-sass": "~0.6.0"
+    "gulp-ruby-sass": "~0.3.0"
   }
 }
