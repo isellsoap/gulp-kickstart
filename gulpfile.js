@@ -4,7 +4,7 @@ var
   gutil = require('gulp-util'),
   rename = require('gulp-rename'),
   // sass
-  sass = require('gulp-sass'),
+  sass = require('gulp-ruby-sass'),
   // scripts
   uglify = require('gulp-uglify'),
   concat = require('gulp-concat'),
@@ -41,7 +41,11 @@ var
 
 gulp.task('sass', function () {
   gulp.src(cssPath + defaultFileName + '.scss')
+    // unminified version
     .pipe(sass())
+    .pipe(gulp.dest(cssPath))
+    // minified version
+    .pipe(sass({ style: 'compressed' }))
     .pipe(rename(fileName + '.css'))
     .pipe(gulp.dest(cssPath))
     .pipe(livereload(server));
