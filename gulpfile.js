@@ -17,7 +17,7 @@ var
 var
   defaultFileName = 'main',
   defaultMinSuffix = 'min',
-  fileName = defaultFileName + '.' + defaultMinSuffix;
+  minFileName = defaultFileName + '.' + defaultMinSuffix;
 
 // file paths
 var
@@ -35,7 +35,7 @@ var
       jsPath + 'libs/**/*.js',
       jsPath + '*.js',
       // ignore minified file
-      '!' + jsPath + fileName + '.js'
+      '!' + jsPath + minFileName + '.js'
     ]
   };
 
@@ -46,7 +46,7 @@ gulp.task('sass', function () {
     .pipe(gulp.dest(cssPath))
     // minified version
     .pipe(sass({ style: 'compressed' }))
-    .pipe(rename(fileName + '.css'))
+    .pipe(rename(minFileName + '.css'))
     .pipe(gulp.dest(cssPath))
     .pipe(livereload(server));
 });
@@ -54,7 +54,7 @@ gulp.task('sass', function () {
 gulp.task('scripts', function() {
   gulp.src(paths.scripts)
     .pipe(uglify())
-    .pipe(concat(fileName + '.js'))
+    .pipe(concat(minFileName + '.js'))
     .pipe(gulp.dest(jsPath))
     .pipe(livereload(server));
 });
