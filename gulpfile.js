@@ -41,10 +41,6 @@ var
 
 gulp.task('sass', function () {
   gulp.src(cssPath + defaultFileName + '.scss')
-    // unminified version
-    .pipe(sass())
-    .pipe(gulp.dest(cssPath))
-    // minified version
     .pipe(sass({ style: 'compressed' }))
     .pipe(rename(minFileName + '.css'))
     .pipe(gulp.dest(cssPath))
