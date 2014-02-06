@@ -1,4 +1,5 @@
 var Application = (function() {
+  "use strict";
 
   var init = function() {
 
@@ -10,5 +11,7 @@ var Application = (function() {
 })();
 
 $(function(){
+  "use strict";
+  
   Application.init();
 });
