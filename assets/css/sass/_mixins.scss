@@ -76,7 +76,7 @@
  * Generates linear gradients with the vendor specific syntaxes.
  */
 
-@mixin linear-gradient($direction, $start-color: rgba(255, 255, 255, 0), $end-color: $default-background-color) {
+@mixin linear-gradient($direction, $start-color: rgba(255, 255, 255, 0), $end-color: rgba(255, 255, 255, 1)) {
   /* Opposite direction used for standard W3C linear-gradient syntax (last line). */
   $opposite: opposite-direction-of($direction);
 
