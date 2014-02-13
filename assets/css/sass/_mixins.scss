@@ -80,9 +80,10 @@
   /* Opposite direction used for standard W3C linear-gradient syntax (last line). */
   $opposite: opposite-direction-of($direction);
 
-  background: -moz-linear-gradient(#{$direction}, $start-color 0%, $end-color 100%);
-  background: -ms-linear-gradient(#{$direction}, $start-color 0%, $end-color 100%);
-  background: -o-linear-gradient(#{$direction}, $start-color 0%, $end-color 100%);
-  background: -webkit-linear-gradient(#{$direction}, $start-color 0%, $end-color 100%);
-  background: linear-gradient(to #{$opposite}, $start-color 0%, $end-color 100%);
+  background-color: $end-color;
+  background-image: -moz-linear-gradient(#{$direction}, $start-color 0%, $end-color 100%);
+  background-image: -ms-linear-gradient(#{$direction}, $start-color 0%, $end-color 100%);
+  background-image: -o-linear-gradient(#{$direction}, $start-color 0%, $end-color 100%);
+  background-image: -webkit-linear-gradient(#{$direction}, $start-color 0%, $end-color 100%);
+  background-image: linear-gradient(to #{$opposite}, $start-color 0%, $end-color 100%);
 }
