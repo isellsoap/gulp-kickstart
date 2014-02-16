@@ -1,17 +1,11 @@
 // gulp plugins
 var
   gulp = require('gulp'),
-  gutil = require('gulp-util'),
-  rename = require('gulp-rename'),
-  // sass
-  sass = require('gulp-ruby-sass'),
-  // scripts
-  uglify = require('gulp-uglify'),
-  concat = require('gulp-concat'),
-  // live reloading
-  livereload = require('gulp-livereload'),
-  lr = require('tiny-lr'),
-  server = lr();
+  // loads in all gulp plugins prefixed with `gulp-` and attaches them to the
+  // `gp` variable
+  gp = require('gulp-load-plugins')(),
+  // livereload server
+  server = require('tiny-lr')();
 
 // file names
 var
@@ -41,18 +35,18 @@ var
 
 gulp.task('sass', function () {
   gulp.src(cssPath + defaultFileName + '.scss')
-    .pipe(sass({ style: 'compressed' }))
-    .pipe(rename(minFileName + '.css'))
+    .pipe(gp.rubySass({ style: 'compressed' }))
+    .pipe(gp.rename(minFileName + '.css'))
     .pipe(gulp.dest(cssPath))
-    .pipe(livereload(server));
+    .pipe(gp.livereload(server));
 });
 
 gulp.task('scripts', function() {
   gulp.src(paths.scripts)
-    .pipe(uglify())
-    .pipe(concat(minFileName + '.js'))
+    .pipe(gp.uglify())
+    .pipe(gp.concat(minFileName + '.js'))
     .pipe(gulp.dest(jsPath))
-    .pipe(livereload(server));
+    .pipe(gp.livereload(server));
 });
 
 gulp.task('watch', function () {
