@@ -1,5 +1,5 @@
 {
-"name": "gulp-kickstart",
+  "name": "gulp-kickstart",
   "version": "0.1.0",
   "description": "A mini framework for quickly starting web projects.",
   "author": "Francesco Schwarz <mail@frncs.co>",
