@@ -44,6 +44,7 @@ This will automatically install the following dev dependencies:
 * [gulp-ruby-sass](https://github.com/sindresorhus/gulp-ruby-sass) 
 * [gulp-uglify](https://github.com/terinjokes/gulp-uglify) 
 * [gulp-concat](https://github.com/wearefractal/gulp-concat)
+* [gulp-load-plugins](https://github.com/jackfranklin/gulp-load-plugins) 
 * [gulp-livereload](https://github.com/vohof/gulp-livereload) 
 * [tiny-lr](https://github.com/mklabs/tiny-lr)
 
