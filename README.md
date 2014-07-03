@@ -38,15 +38,15 @@ npm install
 
 This will automatically install the following dev dependencies:
 
-* [gulp](https://github.com/gulpjs/gulp)
-* [gulp-util](https://github.com/gulpjs/gulp-util) 
-* [gulp-rename](https://github.com/hparra/gulp-rename) 
-* [gulp-ruby-sass](https://github.com/sindresorhus/gulp-ruby-sass) 
-* [gulp-uglify](https://github.com/terinjokes/gulp-uglify) 
-* [gulp-concat](https://github.com/wearefractal/gulp-concat)
-* [gulp-load-plugins](https://github.com/jackfranklin/gulp-load-plugins) 
-* [gulp-livereload](https://github.com/vohof/gulp-livereload) 
-* [tiny-lr](https://github.com/mklabs/tiny-lr)
+* [gulp](https://www.npmjs.org/package/gulp)
+* [gulp-util](https://www.npmjs.org/package/gulp-util)
+* [gulp-rename](https://www.npmjs.org/package/gulp-rename)
+* [gulp-ruby-sass](https://www.npmjs.org/package/gulp-ruby-sass)
+* [gulp-uglify](https://www.npmjs.org/package/gulp-uglify)
+* [gulp-concat](https://www.npmjs.org/package/gulp-concat)
+* [gulp-load-plugins](https://www.npmjs.org/package/gulp-load-plugins)
+* [gulp-livereload](https://www.npmjs.org/package/gulp-livereload)
+* [tiny-lr](https://www.npmjs.org/package/tiny-lr)
 
 
 ### 3. Install one of the [LiveReload browser extensions](http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-).
@@ -56,4 +56,3 @@ This will automatically install the following dev dependencies:
 ```
 gulp
 ```
-
